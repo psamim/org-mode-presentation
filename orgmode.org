@@ -1,0 +1,148 @@
+#+OPTIONS: num:nil
+#+OPTIONS: toc:nil
+#+REVEAL_TRANS: concave
+#+REVEAL_EXTRA_CSS: ./css/stylesheet.css
+#+REVEAL_THEME: simple
+#+REVEAL_SPEED: slow
+#+REVEAL_SLIDE_NUMBER: t
+#+STARTUP: align
+# #+LATEX_CLASS: assignment
+#+LATEX_CLASS: beamer
+#+LATEX_CLASS_OPTIONS: [presentation, bigger]
+#+BEAMER_THEME: default
+#+BEAMER_FONT_THEME: default
+#+BEAMER_COLOR_THEME: beaver
+#+Title: Org-mode
+#+Author:  Samim Pezeshki
+#+Email: psamim@psam.im
+
+* Overview
+  - Org-mode basics
+  - As a todo manager and my workflow
+  - As an authoring tool and my workflow
+* Everyone has a notebook
+  :PROPERTIES:
+  :reveal_background: #8776ff
+  :END:
+* Why text files?
+  :PROPERTIES:
+  :reveal_background: #8776ff
+  :END:
+** Evolution
+   [[./images/trap.jpg]]
+   - Windows
+   - Android
+   - UNIX Way
+** Truly portable
+** Time proof
+** grep and others
+** Version Control
+   [[./images/vc.jpg]]
+** Own your notes
+** Sync
+** UNIX Philosophy
+** Your Editor of choice
+   [[./images/curves.png]]
+* Now . . . Org-mode
+  :PROPERTIES:
+  :reveal_background: #8776ff
+  :END:
+** What is org-mode?
+  [[./images/logo.png]]
+*** Emacs mode
+    [[./images/emacs.png]]
+*** Simple  TODO list manager
+*** Project Planner
+*** Note taking, Authoring Tool
+*** Based in outlines
+** History
+   - Started in 2003
+   - Integrated into Emacs
+* Basics
+  :PROPERTIES:
+  :reveal_background: #8776ff
+  :END:
+** Stars and headlines
+** Styling
+  *Bold*, /italic/, +strike-through+ 
+
+** Visibility Cycling using TAB
+** Move headlines
+** Lists, ordered and un-ordered
+** Check-boxes (Nested)
+** Links
+** Org Menu
+** Encryption
+** Authoring
+** Table Editor and Spreadsheets
+** Comments
+** Code Blocks
+* Export System
+  :PROPERTIES:
+  :reveal_background: #8776ff
+  :END:
+** ODT, PDF, LaTeX, ASCII
+** HTML with MathJax
+** As a Static Site Generator
+** Beamer
+** Reveal
+** Parsers
+** Github Support
+** Other Packages
+* Ultimate Todo Manager
+  :PROPERTIES:
+  :reveal_background: #8776ff
+  :END:
+** Meta-data and properties
+** Tags, inheritance
+** Priorities
+** Efforts
+** Scheduling and Time Planning
+** Habits
+** Status Flag
+    [[./images/fsm.png]]
+** Clocking
+** Time Tables
+** Sparse Trees and queries
+** Agenda Views
+** Archiving and Refiling
+** Org-pomodoro
+** Links
+   - to EVERYTHING
+   - remember.el and templates
+** GTD
+  - Collect  
+  - Process  
+  - Organize 
+  - Review   
+  - Do       
+* Ultimate Authoring
+  :PROPERTIES:
+  :reveal_background: #8776ff
+  :END:
+** Embedded Latex and Previews
+** Preview Images
+** Tables and Calc
+** Spell Checking
+** Autocompletion
+** =Minted= and =htmlize.el=
+** Latex classes
+** Full Editor on Code Blocks
+   [[./images/emacs_user.jpg]]
+** Babel
+   [[./images/babel.png]]
+** Emacs LaTeX Tools
+   RefTex, CDLatex
+** Bibloiography and References
+   Biblatex using /Zotero/
+   [[./images/zotero.png]]
+** Plantuml, Graphviz, Ditaa
+** Reproducible Research
+   - iPyhthon
+   - Mathematica
+   - Knitr
+** Meta-Programming
+* The End
+  :PROPERTIES:
+  :reveal_background: #8776ff
+  :END:
