@@ -1,0 +1,142 @@
+
+#+BEGIN_SRC java
+public static method() {
+}
+#+END_SRC
+
+   | 23 a        |
+   | 24 a        |
+   | 35 a        |
+   | 27.333333 a |
+   #+TBLFM: @>=vmean(@1..@-1)
+
+   | Func   | n | x | Result                           |
+   |--------+---+---+----------------------------------|
+   | exp(x) | 1 | x | 1 + x                            |
+   | tan(x) | 3 | x | 0.017453293 x + 1.7721923e-6 x^3 |
+   #+TBLFM: $4=taylor($1,$3,$2)
+
+   C-c }
+#+BEGIN_SRC sh exports: both
+    ls -alh                                                                     
+#+END_SRC 
+
+#+RESULTS:
+| total      | 292K |       |       |      |     |    |       |            |
+| drwxr-xr-x |    5 | samim | users | 4.0K | Aug | 24 | 13:11 | .          |
+| drwxr-xr-x |    6 | samim | users | 4.0K | Aug | 23 | 12:12 | ..         |
+| drwxr-xr-x |    2 | samim | users | 4.0K | Aug | 23 | 18:39 | auto       |
+| drwxr-xr-x |    3 | samim | users | 4.0K | Aug | 23 | 13:24 | css        |
+| -rw-r--r-- |    1 | samim | users | 6.0K | Aug | 24 | 13:03 | dirs.pdf   |
+| -rw-r--r-- |    1 | samim | users | 29K  | Aug | 24 | 13:30 | dirs.png   |
+| -rw-r--r-- |    1 | samim | users | 37K  | Aug | 24 | 13:11 | fsm.png    |
+| drwxr-xr-x |    8 | samim | users | 4.0K | May |  5 | 13:28 | reveal.js  |
+| -rw-r--r-- |    1 | samim | users | 6.0K | Aug | 24 | 13:03 | Rplots.pdf |
+| -rw-r--r-- |    1 | samim | users | 305  | Aug | 24 | 13:07 | samim.blg  |
+| -rw-r--r-- |    1 | samim | users | 17K  | Aug | 24 | 12:09 | samim.html |
+| -rw-r--r-- |    1 | samim | users | 6.9K | Aug | 24 | 13:28 | samim.org  |
+| -rw-r--r-- |    1 | samim | users | 141K | Aug | 24 | 13:07 | samim.pdf  |
+| -rw-r--r-- |    1 | samim | users | 7.7K | Aug | 24 | 13:07 | samim.tex  |
+
+#+begin_src ruby :results value
+    require 'date'
+    "This file was last evaluated on #{Date.today}"
+#+end_src
+
+#+RESULTS:
+=This file was last evaluated on 2014-08-24
+
+#+begin_src sh
+    echo "This file takes up `du -h samim.org |sed 's/\([0-9k]*\)[ ]*org-babel.org/\1/'`"
+#+end_src
+
+#+RESULTS:
+| This file takes up 8.0K | samim.org |
+
+#+begin_src R :colnames yes
+    words <- tolower(scan("samim.org", what="", na.strings=c("|",":")))
+    t(sort(table(words[nchar(words) > 3]), decreasing=TRUE)[1:10])
+#+end_src
+
+#+RESULTS:
+| samim | users | #+results: | #+begin_src | #+end_src | -rw-r--r-- | 4.0k | drwxr-xr-x | your | 10:58 |
+|-------+-------+------------+-------------+-----------+------------+------+------------+------+-------|
+|    13 |    12 |         11 |          10 |        10 |          7 |    6 |          6 |    6 |     5 |
+
+#+NAME: square
+#+BEGIN_SRC ruby :results value :var x=2
+   def square(args)
+     return args**2
+   end
+   square x
+#+END_SRC
+
+#+RESULTS: square
+    : 4
+
+
+#+RESULTS:
+   : 4
+
+#+CALL: square(x=5)
+
+#+RESULTS:
+=25
+=    
+#+tblname: fibonacci-inputs
+| 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |
+
+#+name: fibonacci-seq
+#+begin_src emacs-lisp :var fib-inputs=fibonacci-inputs 
+    (defun fibonacci (n)
+      (if (or (= n 0) (= n 1))
+          n
+        (+ (fibonacci (- n 1)) (fibonacci (- n 2)))))
+
+    (mapcar (lambda (row)
+              (mapcar #'fibonacci row)) fib-inputs)
+#+end_src
+
+#+RESULTS: fibonacci-seq
+| 1 | 1 | 2 | 3 | 5 | 8 | 13 | 21 | 34 | 55 |
+
+
+org-babel-expand-src-block
+#+BEGIN_SRC ruby :var x=fibonacci-inputs :results value table
+d = Array.new
+d[1] = Array.new
+x[0].each do |y|
+  d[1] << y*2
+end
+puts d
+#+END_SRC
+
+#+RESULTS:
+| nil |
+
+
+#+name: directories
+#+begin_src sh :results replace
+    cd ~/Music/library/ && du -sc * |grep -v total
+#+end_src
+
+#+RESULTS: directories
+|  73076 | Axiom of Choice   |
+| 469304 | Coldplay          |
+| 223648 | Compilations      |
+|    324 | data              |
+|   4644 | Lana Del Rey      |
+|  87436 | Linkin Park       |
+|   7740 | Mohsen Namjoo     |
+|  76712 | Scorpions         |
+|   8708 | Sia               |
+| 217640 | Whitney Houston   |
+|   4956 | Zbigniew Preisner |
+
+#+name: directory-pie-chart(dirs = directories)
+#+begin_src R :file dirs.png :var dirs=directories :results graphics :exports results
+    pie(dirs[,1], labels = dirs[,2])
+#+end_src
+
+#+RESULTS: directory-pie-chart
+    [[file:dirs.png]]

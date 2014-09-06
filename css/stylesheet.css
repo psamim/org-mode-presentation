@@ -1,0 +1,47 @@
+
+@font-face {
+font-family: 'BYekan';
+src: url('./fonts/BYekan.eot?#') format('eot'),
+url('./fonts/BYekan.ttf') format('truetype'),
+url('./fonts/BYekan.woff') format('woff');
+}
+
+.reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5, .reveal h6, .reveal p, .reveal ul {
+    font-family: Ubuntu, BYekan;
+    line-height: 1.4;
+    /* direction: rtl; */
+}
+
+/* .reveal ul { */
+/*     text-align: right; */
+/* } */
+
+.reveal .progress {
+    height: 20px;
+}
+
+.reveal .slide-number {
+    /* display:none; */
+    font-size: 28px;
+    left: 17px;
+    bottom: 20px;
+}
+
+.reveal .controls {
+
+}
+
+.reveal section img {
+background: rgba(255, 255, 255, 0.12);
+border: 0;
+box-shadow: none;
+}
+
+p.lessmore {
+    font-family: ubuntu;
+    font-size: 100px;
+}
+
+.small-table td {
+    font-size: 10px;
+}
