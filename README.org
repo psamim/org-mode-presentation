@@ -2,3 +2,5 @@
 Here are the files I used in my presentation, slides and samples.
 
 The video of the presentation is available at [[http://youtu.be/ILWxQfteJuk]].
+
+My org-mode config file is available at [[https://github.com/psamim/emacs.d/blob/master/config/init-org.el]].
